@@ -1,0 +1,369 @@
+<!-- START - COMPONENT - VANILLA COUNTDOWN TIMER -->
+    <!-- START - HTML - VANILLA COUNTDOWN TIMER -->
+    <div class="vc__sitewide-banner"
+    data-countdown-container=""
+    data-countdown-visibility="dynamic">
+    <!-- data-countdown-visibility="dynamic" enables the banner to hide after the date/time specified
+    To disable this behaviour remove the data attibute and search 'CHANGE ME - EXPIRED MESSAGE' -->
+
+        <div class="vc__sitewide-banner__wrapper">
+
+            <p class="vc__sitewide-banner__text">
+                <!-- CHANGE ME -->
+                <strong>
+                    SPEND & GET UP TO 20% OFF*
+                </strong>
+
+                <br style="margin-bottom: 4px;">
+
+                <span class="vc__sitewide-banner__cta">
+                    <!-- CHANGE ME -->
+                    <a href=""
+                    target="_blank">
+                        Link here &#10132
+                    </a>
+                </span>
+
+            </p>
+
+
+            <div data-countdown-timer="2025-02-28T13:59:59Z">
+                <span data-countdown-days="">
+                <!-- &nbsp; predefined white-space preventing content shift post script intialisation -->
+                <span>&nbsp;</span>
+                </span>
+                <span data-countdown-hours="">
+                <span>&nbsp;</span>
+                </span>
+                <span data-countdown-minutes="">
+                <span>&nbsp;</span>
+                </span>
+                <span data-countdown-seconds="">
+                <span>&nbsp;</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- END - HTML - VANILLA COUNTDOWN TIMER -->
+
+    <!-- START - STYLES - VANILLA COUNTDOWN TIMER -->
+    <style>
+        /*
+        * Prefixed by https://autoprefixer.github.io
+        * PostCSS: v8.4.14,
+        * Autoprefixer: v10.4.7
+        * Browsers: last 4 version
+        */
+
+        /* STYLE VARIABLES */
+        /* CHANGE ME */
+        .vc__sitewide-banner {
+            --vc__color-primary: #122439;
+            /* Colour of titles/text */
+            --vc__color-text: #122439;
+            /* Bg colour of parent container */
+            --vc__background: #90c7d8;
+            /* Bg colour of the span containers */
+            --vc__background-time-containers: #000000;
+            /* Colour of the span containers' text */
+            --vc__color-time-containers: #ffffff;
+            /* Border radius of the time containers */
+            --vc__radius-time-containers: 5px;
+            /* predefined white-space preventing content shift post script intialisation */
+            --vc__color-time-placeholder: "\00A0";
+            /* controls banner reveal animation transition */
+            --vc__timer-transition: 1s linear;
+            /* Font size of the span containers' text */
+            --vc__font-size-time-text: .9475rem;
+            /* colour of the banner link */
+            --vc__color-cta: #67809E;
+
+            --vc__font-size-title: .9375rem;
+
+            --vc__font-weight: 500;
+
+            --vc__padding-block: .75rem;
+            --vc__padding-inline: 1rem; 
+        }
+        /* Banner styling */
+        .vc__sitewide-banner,
+        .vc__sitewide-banner__wrapper {
+            width: 100%;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        .vc__sitewide-banner {
+            background-color: var(--vc__background);
+            padding: var(--vc__padding-block) 0;
+            color: var(--color-white);
+        }
+        .vc__sitewide-banner__wrapper {
+            padding: 0 var(--vc__padding-inline);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            gap: var(--vc__padding-block);
+        }
+        /* LOCAL OVERRIDE - paragraph text global bottom margin */
+        .vc__sitewide-banner__text {
+            color: var(--vc__color-text); 
+            line-height: 1; 
+            text-align: center;
+            overflow: visible;
+            /* Fall back */
+            font-size: .9475rem;
+            font-size: var(--vc__font-size-title);
+            font-weight: var(--vc__font-weight);
+            margin: 0;
+        }
+        /* Banner link styling */
+        .vc__sitewide-banner__cta:not(#pseudoID),
+        .vc__sitewide-banner__cta a:not(#pseudoID) {
+            font-size: .9375em; 
+            font-weight: 600;
+            color: var(--vc__color-cta);
+        }
+        /* Countdown content styling */
+        [data-countdown-container] {
+            -webkit-transition: opacity var(--vc__timer-transition);
+            -o-transition: opacity var(--vc__timer-transition);
+            transition: opacity var(--vc__timer-transition);
+            opacity: 0;
+            display: -ms-grid;
+            display: grid;
+            /* Fall back */
+            font-size: .9375rem;
+            font-size: var(--vc__font-size-time-text);
+        }
+        [data-countdown-visibility="dynamic"] {
+            --vc__timer-transition: 300ms linear;
+            -webkit-transition: grid-template-rows var(--vc__timer-transition);
+            -o-transition: grid-template-rows var(--vc__timer-transition);
+            transition: grid-template-rows var(--vc__timer-transition);
+            transition: grid-template-rows var(--vc__timer-transition), -ms-grid-rows var(--vc__timer-transition);
+        }
+        /* Container that holds ime information */
+        [data-countdown-timer] {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            padding: 0 var(--globalPadding);
+            font-weight: 600;
+            -webkit-transition: opacity var(--vc__timer-transition);
+            -o-transition: opacity var(--vc__timer-transition);
+            transition: opacity var(--vc__timer-transition);
+        }
+        /* Timer child span/s */
+        [data-countdown-timer] > span {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        /* Time nodes, Days, Hours, Minutes, Seconds */
+        [data-countdown-timer] > span > span {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            text-align: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            min-width: 2.2em;
+            padding: 7px 5px;
+            border-radius: var(--vc__radius-time-containers);
+            color: var(--vc__color-time-containers);
+        }
+        /* Time node spuedo labels */
+        [data-countdown-timer] > span > span::after {
+            font-size: .5em;
+            text-align: center;
+            opacity: .7;
+        }
+        /* PSUEDO init default styling for ':' */
+        [data-countdown-timer] > span:not(:last-child)::after {
+            padding: 5px;
+            color: var(--vc__background-time-containers);
+        }
+
+        /* ____________________________________________________________________________________ */
+        /* TIMER PRE ACTIVE PLACEHOLDER STYLING*/
+        [data-countdown-visibility="dynamic"]:not([data-countdown-active="true"]) {
+            -ms-grid-rows: 0fr;
+            grid-template-rows: 0fr;
+        }
+        [data-countdown-visibility="dynamic"][data-countdown-active="true"] {
+            -ms-grid-rows: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        /* Required for height transition effect for dynamic container*/
+        [data-countdown-visibility="dynamic"] * {
+            overflow: hidden;
+        }
+        /* Init timer opactity 0 until active */
+        :not([data-countdown-active="true"]) [data-countdown-timer] {
+            opacity: 0;
+        }
+        /* Prevent layout shift before timer is active */
+        /* PSUEDO ':' - CONTENT*/
+        :not([data-countdown-active="true"]) [data-countdown-timer] > span:not(:last-child)::after,
+        :not([data-countdown-active="true"]) [data-countdown-days] span::after,
+        :not([data-countdown-active="true"]) [data-countdown-hours] span::after,
+        :not([data-countdown-active="true"]) [data-countdown-minutes] span::after,
+        :not([data-countdown-active="true"]) [data-countdown-seconds] span::after {
+            /* adds non breaking space to timer node labels pre timer activation
+            Avoids vertical layout shift  */
+            content: var(--vc__color-time-placeholder);
+        }
+
+        /* ____________________________________________________________________________________ */
+        /* TIMER IS ACTIVE STYLING */
+        /* Set time node background color once active */
+        [data-countdown-active="true"] {
+            opacity: 1;
+        }
+        [data-countdown-active="true"] [data-countdown-timer] {
+            opacity: 1;
+        }
+        [data-countdown-active="true"] [data-countdown-timer] > span > span {
+            background-color: var(--vc__background-time-containers);
+            text-decoration: none !important;
+        }
+        /* PSUEDO Time nodes, Days, Hours, Minutes, Seconds */
+        [data-countdown-active="true"] [data-countdown-timer] > span:not(:last-child)::after {
+            content: ':';
+        }
+        [data-countdown-active="true"] [data-countdown-days] span::after {
+            content: 'DAYS';
+        }
+        [data-countdown-active="true"] [data-countdown-hours] span::after {
+            content: 'HOURS';
+        }
+        [data-countdown-active="true"] [data-countdown-minutes] span::after {
+            content: 'MIN';
+        }
+        [data-countdown-active="true"] [data-countdown-seconds] span::after {
+            content: 'SEC';
+        }
+    </style>
+    <!-- END - STYLES - VANILLA COUNTDOWN TIMER -->
+
+    <!-- START - SCRIPT - VANILLA COUNTDOWN TIMER -->
+    <script>
+        // *COUNTDOWN TIMER
+        // INIT selectors for data attributes
+        const parentSelector = "data-countdown-container";
+        const childSelector = "data-countdown-timer";
+        const visibilitySelector = "data-countdown-visibility";
+        // WAIT for DOM to load
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // TARGET countdown container/s
+            const countdownContainers = document.querySelectorAll(`[${parentSelector}]`);
+            // IF countdown container/s exist in DOM
+            if(countdownContainers) {
+                // ITERATE countdown containers
+                countdownContainers.forEach((container) => {
+                // TARGET child countdown timer/s
+                let countdownTimer = container.querySelector(`[${childSelector}]`);
+                // console.log("countdownTimer: "+countdownTimer);
+                // INIT checks for countdown time with child time nodes
+                const targetChildAttr = ["days","hours","minutes","seconds"];
+                // INIT has child time nodes as true
+                let hasChildren = true;
+                // CHECK all required timer child nodes are present
+                // Days, Hours, Minutes, Seconds
+                targetChildAttr.forEach((child) => {
+            
+                    if (container.querySelector(`[data-countdown-${child}]`)) {
+                        // If days, hours, minutes, seconds child nodes all exist
+                        // continue with hasChildren = true 
+                    } else {
+                        // If required child nodes aren't found
+                        // hasChild = false
+                        hasChildren = false;
+                    }
+                });
+                // Log final hasChild condition
+                // console.log("Element has children? "+hasChildren);
+                // IF container has countdownTimer
+                if(countdownTimer) {
+                    // EXTRACT date time from child countdown timer attribute
+                    let timerEndDate = countdownTimer.getAttribute(childSelector);
+                    // INIT end date
+                    let countDownDate = new Date(timerEndDate).getTime();
+                    // UPDATE the count down every 1 second
+                    let x = setInterval(function() {
+                        // GET today's date and time
+                        let now = new Date().getTime();
+                        // FIND the distance between now and the count down date
+                        let distance = countDownDate - now;
+                        // CALCULATE time for days, hours, minutes and seconds
+                        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        // CHECK for time child nodes"
+                        if (hasChildren === true) {
+                            // IF countdown timer has all required child time nodes
+                            // SET time node values
+                            countdownTimer.querySelector("[data-countdown-days] span").innerHTML = days;
+                            countdownTimer.querySelector("[data-countdown-hours] span").innerHTML = hours;
+                            countdownTimer.querySelector("[data-countdown-minutes] span").innerHTML = minutes;
+                            countdownTimer.querySelector("[data-countdown-seconds] span").innerHTML = seconds;
+                            // SET data-countdown-activ="true"
+                            container.dataset.countdownActive = "true";
+                        } else {
+                            // IF countdown doesn't have require chi;ld time nodes
+                            // SET innerHTML with timer as string
+                            countdownTimer.innerHTML = days + "d : " + hours + "h : "
+                            + minutes + "m : " + seconds + "s ";
+                            // SET data-countdown-activ="true"
+                            container.dataset.countdownActive = "true";
+                        }
+                        // IF the count down is over
+                        if (distance < 0) {
+                            // CLEAR timer
+                            clearInterval(x);
+                            // IF timer container data-countdown-visibilit="dynamic"
+                            if (container.getAttribute(visibilitySelector) === "dynamic") {
+                            // REMOVE container and children from DOM
+                            container.remove()
+                            } else {
+                                // CHANGE ME - EXPIRED MESSAGE
+                                countdownTimer.innerHTML = "OFFER EXPIRED";
+                            }
+                        }
+                    }, 1000);
+                }
+            });
+            }
+        });
+    </script>
+    <!-- END - SCRIPT - COUNTDOWN TIMER - END -->
+<!-- END - COMPONENT - VANILLA COUNTDOWN TIMER -->
+
+
+
+
+
