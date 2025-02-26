@@ -1,2 +1,2 @@
 # vanilla_components
-Vanilla HTML, CSS and Javascript Componets
+Vanilla HTML, CSS and Javascript Components
